@@ -1,0 +1,23 @@
+.mascot-wrapper {
+  position: fixed;
+  pointer-events: none; /* Do not block clicks */
+  opacity: 0.95;
+  transition: opacity 200ms ease;
+  mix-blend-mode: normal;
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,0.45));
+}
+
+.mascot-wrapper:hover { opacity: 1; }
+
+.mascot-bottom-right { right: 18px; bottom: 18px; }
+.mascot-bottom-left { left: 18px; bottom: 18px; }
+.mascot-top-right { right: 18px; top: 18px; }
+.mascot-top-left { left: 18px; top: 18px; }
+
+/* inline/in-heading placement will be relative to parent */
+.mascot-inline { position: relative; pointer-events: auto; }
+
+/* make sure mascot respects reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .mascot-wrapper { opacity: 0.95; }
+}

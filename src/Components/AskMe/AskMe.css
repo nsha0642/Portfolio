@@ -1,0 +1,268 @@
+.askme-section {
+  position: relative;
+  background-color: #0d0d0d;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 120px 0 80px;
+  font-family: "Poppins", sans-serif;
+}
+
+.askme-section .floating-background .circle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 64, 129, 0.15), transparent 70%);
+  animation: float 10s ease-in-out infinite;
+}
+
+.askme-section .circle.small {
+  width: 80px;
+  height: 80px;
+  top: 18%;
+  left: 12%;
+  animation-delay: 0s;
+}
+
+.askme-section .circle.medium {
+  width: 140px;
+  height: 140px;
+  top: 52%;
+  left: 80%;
+  animation-delay: 2s;
+}
+
+.askme-section .circle.large {
+  width: 220px;
+  height: 220px;
+  top: 72%;
+  left: 28%;
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-20px);
+    opacity: 1;
+  }
+}
+
+.askme-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+  position: relative;
+}
+
+/* Keep the Ask Me card visually fixed/sticky when the page scrolls */
+.askme-card {
+  position: sticky;
+  top: 80px;
+  z-index: 3;
+}
+
+.askme-subtitle {
+  color: #cbd5f5;
+  margin-top: 8px;
+  margin-bottom: 24px;
+  text-align: center;
+  max-width: 650px;
+  line-height: 1.6;
+}
+
+.askme-chat {
+  width: 100%;
+  height: 520px;
+  background: rgba(20, 20, 20, 0.95);
+  border-radius: 18px;
+  padding: 24px 24px 18px;
+  box-shadow: 0 0 24px rgba(255, 64, 129, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.askme-messages {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  scroll-behavior: smooth;
+  min-height: 0;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+/* Custom scrollbar styling */
+.askme-messages::-webkit-scrollbar {
+  width: 8px;
+}
+
+.askme-messages::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+.askme-messages::-webkit-scrollbar-thumb {
+  background: rgba(255, 64, 129, 0.6);
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+.askme-messages::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 64, 129, 0.9);
+}
+
+.askme-message {
+  display: flex;
+}
+
+.askme-message-user {
+  justify-content: flex-end;
+}
+
+.askme-message-assistant {
+  justify-content: flex-start;
+}
+
+.askme-bubble {
+  max-width: 80%;
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.askme-message-user .askme-bubble {
+  background: #ff4081;
+  color: #fff;
+  border-bottom-right-radius: 4px;
+}
+
+.askme-message-assistant .askme-bubble {
+  background: #18181b;
+  color: #e5e7eb;
+  border-bottom-left-radius: 4px;
+}
+
+.askme-bubble-loading {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.askme-bubble-loading .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: #e5e7eb;
+  animation: askme-dot 1s infinite ease-in-out;
+}
+
+.askme-bubble-loading .dot:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.askme-bubble-loading .dot:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes askme-dot {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+}
+
+.askme-error {
+  color: #f97373;
+  font-size: 0.85rem;
+}
+
+.askme-form {
+  display: flex;
+  gap: 10px;
+  margin-top: 0;
+  flex-shrink: 0;
+}
+
+.askme-input {
+  flex: 1;
+  resize: none;
+  border-radius: 12px;
+  border: 1px solid #27272a;
+  background: #030712;
+  color: #e5e7eb;
+  padding: 10px 12px;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.askme-input:focus {
+  border-color: #ff4081;
+  box-shadow: 0 0 0 1px rgba(255, 64, 129, 0.35);
+}
+
+.askme-send-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 999px;
+  border: none;
+  padding: 0 16px;
+  background: #ff4081;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.askme-send-btn[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.askme-send-btn svg {
+  transform: rotate(10deg);
+}
+
+@media (max-width: 768px) {
+  .askme-section {
+    padding: 100px 0 60px;
+  }
+
+  .askme-chat {
+    padding: 18px 16px 14px;
+  }
+
+  .askme-messages {
+    max-height: 320px;
+  }
+}
+
+
+
