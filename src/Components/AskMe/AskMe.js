@@ -59,28 +59,39 @@ const AskMe = () => {
 
     try {
       console.log("📤 Sending question to backend:", question);
-      
-      const response = await fetch("/api/ask-me", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ question }),
-      });
 
-      console.log("📥 Response status:", response.status);
-      
-      if (!response.ok) {
-        const errorText = await response.text();
-        console.error("❌ Backend error:", response.status, errorText);
-        throw new Error(`Server error: ${response.status}`);
+      // Payload for POST requests
+      const payload = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ question }),
+      };
+
+      // Try proxy first, then fall back to direct backend address if proxy fails.
+      const tryFetch = async () => {
+        try {
+          return await fetch("/api/ask-me", payload);
+        } catch (err) {
+          console.warn("Proxy fetch failed, retrying direct backend:", err.message);
+          return await fetch("http://127.0.0.1:8000/api/ask-me", payload);
+        }
+      };
+
+      const response = await tryFetch();
+
+      console.log("📥 Response status:", response && response.status);
+
+      if (!response || !response.ok) {
+        const errorText = response ? await response.text() : "No response";
+        console.error("❌ Backend error:", response ? response.status : "-", errorText);
+        throw new Error(`Server error: ${response ? response.status : "No response"}`);
       }
 
       const data = await response.json();
       console.log("✅ Data received:", data);
-      
+
       const answer = data?.answer;
-      
+
       if (!answer) {
         throw new Error("No answer received from server");
       }

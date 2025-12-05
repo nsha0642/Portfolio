@@ -43,8 +43,8 @@ build/
 develop-eggs/
 dist/
 downloads/
-eggs/
-.eggs/
+backend/*.db
+backend/*.sqlite
 lib/
 lib64/
 parts/
