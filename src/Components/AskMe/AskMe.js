@@ -67,17 +67,15 @@ const AskMe = () => {
         body: JSON.stringify({ question }),
       };
 
-      // Try proxy first, then fall back to direct backend address if proxy fails.
-      const tryFetch = async () => {
-        try {
-          return await fetch("/api/ask-me", payload);
-        } catch (err) {
-          console.warn("Proxy fetch failed, retrying direct backend:", err.message);
-          return await fetch("http://127.0.0.1:8000/api/ask-me", payload);
-        }
-      };
+      // Production should set REACT_APP_API_URL to the backend base URL (e.g.
+      // https://api.example.com). When unset we rely on the CRA proxy
+      // (`/api/ask-me`) during local development. This avoids calling
+      // localhost from a deployed frontend on Vercel which causes 405/failed
+      // requests.
+      const apiBase = process.env.REACT_APP_API_URL || "";
+      const endpoint = apiBase ? `${apiBase.replace(/\/$/, "")}/api/ask-me` : "/api/ask-me";
 
-      const response = await tryFetch();
+      const response = await fetch(endpoint, payload);
 
       console.log("📥 Response status:", response && response.status);
 
