@@ -105,10 +105,10 @@ const Home = () => {
             Hi, I'm <span className="highlight">Nishanth Shanmugasundaram</span>
           </h1>
           <h2 className="intro-role">
-            Software Engineer | Front-End Developer | Business Analyst
+            Systems Engineer | Front-End Developer | Business Analyst
           </h2>
           <p className="intro-desc">
-            I'm a software engineer with 2+ years of experience delivering production-ready web
+            I'm a Systems Engineer with 2+ years of experience delivering production-ready web
             applications and RESTful API integrations, currently pursuing a{" "}
             <strong>Master of Computer Science</strong> at <strong>The University of Sydney</strong>.
             My work focuses on component-based architecture, performance optimisation, usability,
