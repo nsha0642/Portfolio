@@ -20,7 +20,6 @@ const Navbar = () => {
     { id: "internships", label: "Internships", path: "/internships" },
     { id: "achievements", label: "Achievements", path: "/achievements" },
     { id: "skills", label: "Skills", path: "/skills" },
-    { id: "ask-me", label: "Ask Me", path: "/ask-me" },
   ];
 
   return (

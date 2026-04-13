@@ -1,26 +1,56 @@
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
-import { CodeBracketIcon, LightBulbIcon } from "@heroicons/react/24/outline";
+import {
+  CodeBracketIcon,
+  CommandLineIcon,
+  LightBulbIcon,
+} from "@heroicons/react/24/outline";
 import "./Skills.css";
 import MascotAnimation from "../Mascot/MascotAnimation";
 import { hoverLift, useSectionReveal } from "../../utils/animations";
 
-const softwareSkills = [
+const programmingSkills = [
+  "Python",
+  "JavaScript",
+  "SQL",
+  "React.js",
+  "Node.js",
+  "Express.js",
+  "Bootstrap",
   "HTML",
   "CSS",
-  "JavaScript",
-  "Bootstrap",
-  "Node.js",
+];
+
+const engineeringSkills = [
+  "Data Structures & Algorithms",
+  "Object-Oriented Programming",
+  "Time & Space Complexity",
+  "RESTful API Design",
+  "Component-Based Architecture",
+  "State Management",
+  "CI/CD",
+  "Performance Optimization",
+  "System Design Fundamentals",
+  "Digital Experience",
+  "Customer Experience",
+];
+
+const toolsAndConcepts = [
+  "Git",
   "JIRA",
-  "React.js",
-  "Excel",
   "Confluence",
+  "Figma",
+  "Human-Computer Interaction",
+  "Accessibility (WCAG)",
+  "Responsive Design",
+  "Cloud Basics",
 ];
 
 const interests = [
-  "Human Computer Interactions",
+  "Human-Computer Interaction",
   "Cyber Security",
-  "Product development and Business Analysis",
+  "Product Development",
+  "Business Analysis",
 ];
 
 const Skills = () => {
@@ -43,10 +73,11 @@ const Skills = () => {
         <div className="skills-grid">
           <motion.article className="skills-card" {...hoverLift}>
             <h3 className="skills-subtitle">
-              <CodeBracketIcon width={20} height={20} aria-hidden="true" /> Software skills
+              <CodeBracketIcon width={20} height={20} aria-hidden="true" /> Programming &amp;
+              Frameworks
             </h3>
             <div className="skills-chip-group">
-              {softwareSkills.map((skill) => (
+              {programmingSkills.map((skill) => (
                 <span key={skill} className="skill-chip">
                   {skill}
                 </span>
@@ -56,12 +87,27 @@ const Skills = () => {
 
           <motion.article className="skills-card" {...hoverLift}>
             <h3 className="skills-subtitle">
-              <LightBulbIcon width={20} height={20} aria-hidden="true" /> Interests
+              <CommandLineIcon width={20} height={20} aria-hidden="true" /> Computer Science &amp;
+              Software Engineering
             </h3>
             <div className="skills-chip-group">
-              {interests.map((interest) => (
-                <span key={interest} className="skill-chip">
-                  {interest}
+              {engineeringSkills.map((skill) => (
+                <span key={skill} className="skill-chip">
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </motion.article>
+
+          <motion.article className="skills-card" {...hoverLift}>
+            <h3 className="skills-subtitle">
+              <LightBulbIcon width={20} height={20} aria-hidden="true" /> Tools, Concepts &amp;
+              Interests
+            </h3>
+            <div className="skills-chip-group">
+              {[...toolsAndConcepts, ...interests].map((item) => (
+                <span key={item} className="skill-chip">
+                  {item}
                 </span>
               ))}
             </div>
@@ -74,5 +120,3 @@ const Skills = () => {
 };
 
 export default Skills;
-
-

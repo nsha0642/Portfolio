@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Routes,
   Route,
   useLocation,
@@ -13,7 +13,6 @@ import Experience from "./Components/Experience/Experience";
 import Internships from "./Components/Internships/Internships";
 import Achievements from "./Components/Achievements/Achievements";
 import Skills from "./Components/Skills/Skills";
-import AskMe from "./Components/AskMe/AskMe";
 import { setupLenis } from "./utils/animations";
 
 const PageWrapper = ({ children }) => (
@@ -94,15 +93,7 @@ const AppRoutes = () => {
               </PageWrapper>
             }
           />
-          <Route
-            path="/ask-me"
-            element={
-              <PageWrapper>
-                <AskMe />
-              </PageWrapper>
-            }
-          />
-      </Routes>
+        </Routes>
       </AnimatePresence>
     </>
   );
@@ -111,8 +102,7 @@ const AppRoutes = () => {
 const App = () => (
   <Router>
     <AppRoutes />
-    </Router>
-  );
+  </Router>
+);
 
 export default App;
-

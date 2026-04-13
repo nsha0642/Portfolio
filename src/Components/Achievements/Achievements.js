@@ -27,38 +27,47 @@ const Achievements = () => {
         </h2>
 
         <div className="achievements-grid">
-          {/* Certifications */}
           <motion.article className="achievement-card" {...hoverLift}>
             <h3 className="achievement-subtitle">
               <SparklesIcon width={20} height={20} aria-hidden="true" /> Certifications
             </h3>
             <ul className="achievement-list">
-              <motion.li variants={listItemVariants} initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.4 }}>
-                Infosys Certified React Professional
-              </motion.li>
-              <motion.li variants={listItemVariants} initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.4 }}>
-                Infosys Certified Front End Developer
-              </motion.li>
-              <motion.li variants={listItemVariants} initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.4 }}>
-                Infosys Certified Manual Tester
-              </motion.li>
+              {[
+                "Infosys Certified React Professional",
+                "Infosys Certified Manual Tester",
+              ].map((item) => (
+                <motion.li
+                  key={item}
+                  variants={listItemVariants}
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{ once: true, amount: 0.4 }}
+                >
+                  {item}
+                </motion.li>
+              ))}
             </ul>
           </motion.article>
 
-          {/* Impact & Recognition */}
           <motion.article className="achievement-card" {...hoverLift}>
             <h3 className="achievement-subtitle">
               <SparklesIcon width={20} height={20} aria-hidden="true" /> Impact &amp; Recognition
             </h3>
             <ul className="achievement-list">
-              <motion.li variants={listItemVariants} initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.4 }}>
-                Recognized as Best Team Player of the Quarter for exceptional contributions as a
-                Front-End Developer in the DX unit at Infosys.
-              </motion.li>
-              <motion.li variants={listItemVariants} initial="initial" whileInView="animate" viewport={{ once: true, amount: 0.4 }}>
-                Spearheaded UI improvements that reduced page load time by 30% and increased
-                end-user engagement, leading to positive feedback from clients and project leads.
-              </motion.li>
+              {[
+                "Recognised as Best Team Player of the Quarter for consistent delivery of production-ready software components and effective collaboration within the DX unit at Infosys.",
+                "Promoted modular design practices and reusable architecture patterns across project modules, improving scalability of feature development and reducing technical debt.",
+              ].map((item) => (
+                <motion.li
+                  key={item}
+                  variants={listItemVariants}
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{ once: true, amount: 0.4 }}
+                >
+                  {item}
+                </motion.li>
+              ))}
             </ul>
           </motion.article>
         </div>
@@ -69,5 +78,3 @@ const Achievements = () => {
 };
 
 export default Achievements;
-
-

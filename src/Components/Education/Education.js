@@ -24,25 +24,23 @@ const Education = () => {
         <h2 className="section-title fade-in-section">Education</h2>
 
         <div className="education-timeline">
-          {/* Sydney */}
           <motion.article className="education-card" {...hoverLift}>
             <div className="edu-image">
               <img src={Sydney} alt="University of Sydney" />
             </div>
             <div className="edu-details">
               <h3>
-                <AcademicCapIcon width={22} height={22} aria-hidden="true" /> Master of Computer Science
+                <AcademicCapIcon width={22} height={22} aria-hidden="true" /> Master of Computer
+                Science
               </h3>
-              <p className="edu-institute">The University of Sydney (2025*)</p>
+              <p className="edu-institute">The University of Sydney (2025 - Present)</p>
               <p className="edu-desc">
                 Currently pursuing a specialization in{" "}
-                <strong>Human-Computer Interaction (HCI)</strong> and{" "}
-                <strong>Cyber-Security</strong>.
+                <strong>Human-Computer Interaction (HCI)</strong>.
               </p>
             </div>
           </motion.article>
 
-          {/* SRM */}
           <motion.article className="education-card" {...hoverLift}>
             <div className="edu-image">
               <img src={Srm} alt="SRM TRP Engineering College" />
@@ -51,25 +49,22 @@ const Education = () => {
               <h3>B.E. Mechanical Engineering</h3>
               <p className="edu-institute">SRM TRP Engineering College (2021)</p>
               <p className="edu-desc">
-                Graduated with <strong>Distinction (82.2%)</strong>.
+                Graduated with <strong>CGPA: 8.22 / 10</strong>.
               </p>
             </div>
           </motion.article>
 
-          {/* Don Bosco */}
           <motion.article className="education-card" {...hoverLift}>
             <div className="edu-image">
-              <img src={DonBosco} alt="Don Bosco Matric Hr Sec School" />
+              <img src={DonBosco} alt="Don Bosco Matric Higher Secondary School" />
             </div>
             <div className="edu-details">
               <h3>Higher Secondary Education</h3>
-              <p className="edu-institute">
-                Don Bosco Mat. Hr. Sec. School (2017)
-              </p>
+              <p className="edu-institute">Don Bosco Mat. Hr. Sec. School</p>
               <p className="edu-desc">
-                Achieved <strong>79.5% (2017)</strong> and{" "}
-                <strong>93.5% (2015)</strong> in STEM with{" "}
-                <strong>Math: 85</strong>, <strong>Science: 100</strong>.
+                Completed schooling with strong STEM performance, including{" "}
+                <strong>93.5%</strong> in secondary examinations and <strong>79.5%</strong> in
+                higher secondary education.
               </p>
             </div>
           </motion.article>

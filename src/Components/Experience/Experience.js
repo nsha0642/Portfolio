@@ -30,7 +30,8 @@ const Experience = () => {
 
         <p className="experience-summary">
           <span className="experience-summary-main">
-            Work Experience (Frontend Developer  I  Business Analyst  I  Application Testing)
+            Software Engineer with experience across front-end engineering, business analysis, and
+            application testing
           </span>
           <br />
           <span className="experience-summary-sub">
@@ -39,7 +40,6 @@ const Experience = () => {
         </p>
 
         <div className="experience-grid">
-          {/* EY */}
           <motion.article className="experience-card" {...hoverLift}>
             <header className="experience-card-header">
               <div className="experience-logo-wrapper">
@@ -47,48 +47,34 @@ const Experience = () => {
               </div>
               <div className="experience-heading">
                 <h3>
-                  <BriefcaseIcon width={22} height={22} aria-hidden="true" /> EY
+                  <BriefcaseIcon width={22} height={22} aria-hidden="true" /> EY - Enterprise
+                  Support Platform Modernisation
                 </h3>
               </div>
             </header>
 
             <ul className="experience-list">
-              <motion.li
-                variants={listItemVariants}
-                initial="initial"
-                whileInView="animate"
-                viewport={{ once: true, amount: 0.4 }}
-              >
-                Led the development of a customer-facing portal for EY where support teams could
-                track and manage raised tickets. Created proof-of-concepts (POCs) for new
-                components and dashboards, and assisted in migrating legacy components to new
-                modules within the application.
-              </motion.li>
-              <motion.li
-                variants={listItemVariants}
-                initial="initial"
-                whileInView="animate"
-                viewport={{ once: true, amount: 0.4 }}
-              >
-                Re-engineered an existing ticket management page to fix UI/UX issues and
-                functional bugs. This involved redesigning the flow to improve user clarity and
-                reduce navigation errors, ensuring a more reliable support interface.
-              </motion.li>
-              <motion.li
-                variants={listItemVariants}
-                initial="initial"
-                whileInView="animate"
-                viewport={{ once: true, amount: 0.4 }}
-              >
-                Translated EY’s dashboard requirements into pixel-perfect React.js components
-                using Figma designs. Implemented reusable UI elements and handled state
-                management to ensure seamless integration with ticketing APIs and improved
-                responsiveness across screen sizes.
-              </motion.li>
+              {[
+                "Refactored a ticket management platform used by enterprise support teams, migrating legacy modules into a modular React-based architecture integrated with RESTful APIs.",
+                "Designed reusable component libraries and state-driven UI workflows, improving maintainability and reducing feature development time by approximately 25%.",
+                "Re-architected ticket lifecycle flows using usability feedback and Human-Computer Interaction principles, improving task completion efficiency and reducing navigation errors.",
+                "Developed proof-of-concept dashboard analytics modules with dynamic rendering and API-driven data visualisation, enabling near real-time monitoring of ticket metrics.",
+                "Optimised performance through lifecycle analysis, memoisation strategies, lazy loading, and structured state management to improve responsiveness and page load time.",
+                "Collaborated with backend teams to define API contracts, manage error handling, and ensure reliable integration between frontend modules and enterprise systems.",
+              ].map((item) => (
+                <motion.li
+                  key={item}
+                  variants={listItemVariants}
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{ once: true, amount: 0.4 }}
+                >
+                  {item}
+                </motion.li>
+              ))}
             </ul>
           </motion.article>
 
-          {/* COWRKS */}
           <motion.article className="experience-card" {...hoverLift}>
             <header className="experience-card-header">
               <div className="experience-logo-wrapper">
@@ -100,86 +86,32 @@ const Experience = () => {
               </div>
               <div className="experience-heading">
                 <h3>
-                  <BriefcaseIcon width={22} height={22} aria-hidden="true" /> COWRKS
+                  <BriefcaseIcon width={22} height={22} aria-hidden="true" /> CoWrks - Partner
+                  Ecosystem Platform
                 </h3>
               </div>
             </header>
 
             <ul className="experience-list">
-              <motion.li
-                variants={listItemVariants}
-                initial="initial"
-                whileInView="animate"
-                viewport={{ once: true, amount: 0.3 }}
-              >
-                Developed the CoWrks Partner Portal and dashboards from scratch, integrating them
-                with the company website through shared login and real-time sync. Built fully
-                responsive React.js interfaces and dashboards using Figma mockups, ensuring
-                consistency across web and mobile platforms.
-              </motion.li>
-              <motion.li
-                variants={listItemVariants}
-                initial="initial"
-                whileInView="animate"
-                viewport={{ once: true, amount: 0.3 }}
-              >
-                Architected the portal so that internal CoWrks members could dynamically manage
-                partner content, which updated instantly on the live site using React state
-                management and RESTful API integrations with conditional rendering and form
-                validations.
-              </motion.li>
-              <motion.li
-                variants={listItemVariants}
-                initial="initial"
-                whileInView="animate"
-                viewport={{ once: true, amount: 0.3 }}
-              >
-                Collaborated with the UX design team to review Figma prototypes, provided
-                feedback on navigation improvements, and implemented pixel-perfect UI elements.
-                Debugged and optimized components to enhance interactivity and responsiveness.
-              </motion.li>
-              <motion.li
-                variants={listItemVariants}
-                initial="initial"
-                whileInView="animate"
-                viewport={{ once: true, amount: 0.3 }}
-              >
-                Diagnosed and resolved critical bugs in both legacy modules and newly developed
-                features. Applied component lifecycle analysis and browser console profiling to
-                improve reliability and reduce client-side errors.
-              </motion.li>
-              <motion.li
-                variants={listItemVariants}
-                initial="initial"
-                whileInView="animate"
-                viewport={{ once: true, amount: 0.3 }}
-              >
-                Authored comprehensive business use cases after directly gathering client
-                requirements. Ensured alignment between business logic and technical design for
-                both mobile and web apps, increasing clarity for developers and reducing rework.
-              </motion.li>
-              <motion.li
-                variants={listItemVariants}
-                initial="initial"
-                whileInView="animate"
-                viewport={{ once: true, amount: 0.3 }}
-              >
-                Demonstrated functional versions of the mobile and web applications to clients
-                prior to UAT. Took part in multiple review cycles and incorporated feedback,
-                ensuring feature completeness. Supported client-side UAT and coordinated final
-                sign-off through bug tracking and resolution.
-              </motion.li>
-              <motion.li
-                variants={listItemVariants}
-                initial="initial"
-                whileInView="animate"
-                viewport={{ once: true, amount: 0.3 }}
-              >
-                After go-live, received positive feedback from stakeholders. Based on internal
-                metrics and surveys, achieved a Customer Satisfaction Score (CSAT) of 4.6/5 and
-                observed a 30% boost in partner engagement within the first quarter
-                post-deployment.
-              </motion.li>
+              {[
+                "Architected and developed an end-to-end partner portal integrated with centralised authentication and real-time content synchronisation via RESTful services.",
+                "Designed role-based dashboards with conditional rendering and robust form validation logic, improving operational efficiency for internal content management teams.",
+                "Implemented session handling and shared login flows to maintain data consistency across web and mobile platforms.",
+                "Applied HCI principles to optimize information architecture, accessibility alignment, and responsive behaviour across multiple device types.",
+                "Reduced client-side production errors through systematic debugging, structured error handling, and browser profiling.",
+                "Wrote unit tests and regression checks for critical components, improving code quality and reducing production regressions.",
+                "Led UAT coordination, resolved production issues, and ensured successful go-live; achieved CSAT 4.6/5 and increased partner engagement by approximately 30% within the first quarter post deployment.",
+              ].map((item) => (
+                <motion.li
+                  key={item}
+                  variants={listItemVariants}
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{ once: true, amount: 0.3 }}
+                >
+                  {item}
+                </motion.li>
+              ))}
             </ul>
           </motion.article>
         </div>
@@ -190,5 +122,3 @@ const Experience = () => {
 };
 
 export default Experience;
-
-

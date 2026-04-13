@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains a React portfolio site prepared for local development and GitHub Pages deployment.
 
-## Available Scripts
+## Run locally
 
-In the project directory, you can run:
+Install dependencies:
 
-### `npm start`
+```bash
+npm install
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Start the app:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+npm start
+```
 
-### `npm test`
+Open `http://localhost:3000` in your browser.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Build
 
-### `npm run build`
+Create a production build with:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm run build
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The compiled site will be available in `build/`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Deploy to GitHub Pages
 
-### `npm run eject`
+This project is set up for GitHub Pages:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- `HashRouter` is used, so page refreshes work on GitHub Pages.
+- `homepage` is set to `"."`, so asset paths stay portable.
+- A GitHub Actions workflow is included at `.github/workflows/deploy.yml`.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+To publish the site:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Push this repository to GitHub.
+2. Open the repository `Settings`.
+3. Go to `Pages`.
+4. Set `Source` to `GitHub Actions`.
+5. Push to `main` or `master`.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+GitHub will build and publish the portfolio automatically, and the Pages URL will open the live site directly.
 
-## Learn More
+## Cleanup performed
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Removed the old AI chat route and related frontend code.
+- Removed the unused Python backend and API-key-based setup files.
+- Kept the portfolio as a static React app for simpler hosting.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Security note
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+An OpenAI API key was present in `backend/.env` before cleanup. If that key was ever committed or shared, rotate it immediately from your OpenAI account.
