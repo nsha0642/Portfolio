@@ -135,6 +135,7 @@ body {
   border-radius: 50%;
   border: 3px solid #fff;
   object-fit: cover;
+  object-position: center 18%;
 }
 
 .hero-illustration {

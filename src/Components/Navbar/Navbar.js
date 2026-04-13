@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import "./Navbar.css";
-import profilePic from "../../assets/profilePic.JPG";
+import profilePic from "../../assets/profilePic.png";
 
 const Navbar = () => {
   const location = useLocation();

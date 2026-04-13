@@ -9,7 +9,7 @@ import {
 import "./Home.css";
 import MascotAnimation from "../Mascot/MascotAnimation";
 import { BubbleBackground } from "../AnimateUI/BubbleBackground";
-import profilePic from "../../assets/profilePic.JPG";
+import profilePic from "../../assets/profilePic.png";
 import heroIllustration from "../../assets/undraw_collaboration.svg";
 import { buttonMotion, useSectionReveal } from "../../utils/animations";
 
