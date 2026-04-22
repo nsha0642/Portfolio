@@ -10,17 +10,16 @@ import "./Home.css";
 import MascotAnimation from "../Mascot/MascotAnimation";
 import { BubbleBackground } from "../AnimateUI/BubbleBackground";
 import profilePic from "../../assets/profilePic.png";
-import heroIllustration from "../../assets/undraw_collaboration.svg";
 import { buttonMotion, useSectionReveal } from "../../utils/animations";
 
 const projects = [
   {
-    title: "ElderCare Assist AI System",
-    tech: "React.js, Python, FastAPI, Docker, HCI, Agile Delivery",
+    title: "ElderCare Assist System",
+    tech: "React.js, FastAPI, OpenAI SDK",
     description: [
-      "Designed and developed an ElderCare assistant platform that helps elderly users manage routines, reminders, and health-related activities through coordinated interactions between the user, caregiver, and doctor.",
-      "Led Agile development through sprint planning, user story definition, and prioritization of core system features while validating end-to-end functional flows and usability outcomes.",
-      "Applied Human-Computer Interaction principles to keep the system reliable, task-oriented, and accessible across multi-stakeholder journeys.",
+      "Led the design and development of a full-stack healthcare platform supporting patients, caregivers, and doctors with features such as health tracking and geofencing alerts.",
+      "Architected and built backend services using FastAPI to manage health data, alerts, and user workflows while integrating an AI-powered assistant for routines, reminders, and conversational support.",
+      "Applied layered and service-oriented architecture patterns and managed Agile delivery through user stories, sprint planning, testing, and coordinated release execution.",
     ],
   },
   {
@@ -100,6 +99,12 @@ const Home = () => {
       </div>
 
       <div className="content container">
+        <div className="image-area home-animate">
+          <div className="photo-panel">
+            <img src={profilePic} alt="Nishanth Shanmugasundaram" className="profile-photo" />
+          </div>
+        </div>
+
         <div className="text-area home-animate">
           <h1 className="intro-title">
             Hi, I'm <span className="highlight">Nishanth Shanmugasundaram</span>
@@ -108,12 +113,12 @@ const Home = () => {
             Systems Engineer | Front-End Developer | Business Analyst
           </h2>
           <p className="intro-desc">
-            I'm a Systems Engineer with 2+ years of experience delivering production-ready web
-            applications and RESTful API integrations, currently pursuing a{" "}
+            I'm a Systems Engineer with 2+ years of experience building scalable full-stack
+            applications and RESTful APIs, currently pursuing a{" "}
             <strong>Master of Computer Science</strong> at <strong>The University of Sydney</strong>.
-            My work focuses on component-based architecture, performance optimisation, usability,
-            and building reliable digital experiences that improve both user engagement and
-            engineering efficiency.
+            I bring a strong foundation in data structures, algorithms, and system design, with
+            hands-on experience developing performant, user-centric systems across frontend and
+            backend architectures.
           </p>
 
           <div className="button-group" ref={buttonsRef}>
@@ -135,21 +140,6 @@ const Home = () => {
         </div>
 
         <MascotAnimation position="bottom-right" size={110} />
-
-        <div className="image-area home-animate">
-          <div className="photo-frame pulse">
-            <img src={profilePic} alt="Nishanth Shanmugasundaram" className="profile-photo wave" />
-          </div>
-          <motion.img
-            src={heroIllustration}
-            alt="Creative collaboration illustration"
-            className="hero-illustration"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.9, ease: "easeOut" }}
-            aria-hidden="true"
-          />
-        </div>
       </div>
 
       {showProjects && (

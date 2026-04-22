@@ -30,8 +30,8 @@ const Experience = () => {
 
         <p className="experience-summary">
           <span className="experience-summary-main">
-            Software Engineer with experience across front-end engineering, business analysis, and
-            application testing
+            Systems Engineer with experience building scalable full-stack applications, RESTful
+            APIs, and user-centric systems across frontend and backend architectures
           </span>
           <br />
           <span className="experience-summary-sub">
@@ -55,12 +55,13 @@ const Experience = () => {
 
             <ul className="experience-list">
               {[
-                "Refactored a ticket management platform used by enterprise support teams, migrating legacy modules into a modular React-based architecture integrated with RESTful APIs.",
-                "Designed reusable component libraries and state-driven UI workflows, improving maintainability and reducing feature development time by approximately 25%.",
-                "Re-architected ticket lifecycle flows using usability feedback and Human-Computer Interaction principles, improving task completion efficiency and reducing navigation errors.",
-                "Developed proof-of-concept dashboard analytics modules with dynamic rendering and API-driven data visualisation, enabling near real-time monitoring of ticket metrics.",
-                "Optimised performance through lifecycle analysis, memoisation strategies, lazy loading, and structured state management to improve responsiveness and page load time.",
-                "Collaborated with backend teams to define API contracts, manage error handling, and ensure reliable integration between frontend modules and enterprise systems.",
+                "Refactored a large-scale ticket management platform by migrating legacy modules into a modular React-based architecture integrated with RESTful backend services.",
+                "Designed reusable component architectures and state-driven workflows, improving maintainability and enabling scalable feature development.",
+                "Re-architected ticket lifecycle workflows using user-centered design principles to improve usability and reduce navigation complexity.",
+                "Developed dynamic dashboard modules with API-driven data rendering for near real-time system monitoring.",
+                "Optimised application performance using lazy loading, memoisation, and efficient state updates to improve responsiveness.",
+                "Collaborated with backend teams to define API contracts and ensure reliable integration across distributed systems.",
+                "Participated in code reviews and design discussions, ensuring code quality, scalability, and testability.",
               ].map((item) => (
                 <motion.li
                   key={item}
@@ -94,13 +95,13 @@ const Experience = () => {
 
             <ul className="experience-list">
               {[
-                "Architected and developed an end-to-end partner portal integrated with centralised authentication and real-time content synchronisation via RESTful services.",
-                "Designed role-based dashboards with conditional rendering and robust form validation logic, improving operational efficiency for internal content management teams.",
-                "Implemented session handling and shared login flows to maintain data consistency across web and mobile platforms.",
-                "Applied HCI principles to optimize information architecture, accessibility alignment, and responsive behaviour across multiple device types.",
-                "Reduced client-side production errors through systematic debugging, structured error handling, and browser profiling.",
-                "Wrote unit tests and regression checks for critical components, improving code quality and reducing production regressions.",
-                "Led UAT coordination, resolved production issues, and ensured successful go-live; achieved CSAT 4.6/5 and increased partner engagement by approximately 30% within the first quarter post deployment.",
+                "Architected and developed a full-stack partner portal with a React frontend and RESTful backend integration supporting real-time content updates.",
+                "Implemented role-based dashboards with conditional rendering and structured validation to improve usability.",
+                "Designed session management and authentication flows to ensure secure and consistent user experiences.",
+                "Applied accessibility best practices (WCAG) and responsive design across multiple devices.",
+                "Diagnosed and resolved production issues using debugging and browser profiling tools.",
+                "Wrote unit tests and performed regression testing to maintain system reliability.",
+                "Supported UAT cycles and collaborated with stakeholders to ensure successful production deployment.",
               ].map((item) => (
                 <motion.li
                   key={item}

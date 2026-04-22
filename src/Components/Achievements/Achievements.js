@@ -29,12 +29,12 @@ const Achievements = () => {
         <div className="achievements-grid">
           <motion.article className="achievement-card" {...hoverLift}>
             <h3 className="achievement-subtitle">
-              <SparklesIcon width={20} height={20} aria-hidden="true" /> Certifications
+              <SparklesIcon width={20} height={20} aria-hidden="true" /> Recognition
             </h3>
             <ul className="achievement-list">
               {[
-                "Infosys Certified React Professional",
-                "Infosys Certified Manual Tester",
+                "Awarded Best Team Player of the Quarter at Infosys for consistent delivery and collaboration.",
+                "Ranked among top performers in the DX Unit at Infosys with a Digital Quotient score of 145, earning recognition and rewards from leadership for outstanding performance.",
               ].map((item) => (
                 <motion.li
                   key={item}
@@ -51,12 +51,12 @@ const Achievements = () => {
 
           <motion.article className="achievement-card" {...hoverLift}>
             <h3 className="achievement-subtitle">
-              <SparklesIcon width={20} height={20} aria-hidden="true" /> Impact &amp; Recognition
+              <SparklesIcon width={20} height={20} aria-hidden="true" /> Certifications
             </h3>
             <ul className="achievement-list">
               {[
-                "Recognised as Best Team Player of the Quarter for consistent delivery of production-ready software components and effective collaboration within the DX unit at Infosys.",
-                "Promoted modular design practices and reusable architecture patterns across project modules, improving scalability of feature development and reducing technical debt.",
+                "Infosys Certified React Professional",
+                "Infosys Certified Manual Tester",
               ].map((item) => (
                 <motion.li
                   key={item}

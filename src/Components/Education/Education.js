@@ -36,7 +36,8 @@ const Education = () => {
               <p className="edu-institute">The University of Sydney (2025 - Present)</p>
               <p className="edu-desc">
                 Currently pursuing a specialization in{" "}
-                <strong>Human-Computer Interaction (HCI)</strong>.
+                <strong>Human-Computer Interaction (HCI)</strong> with a current{" "}
+                <strong>WAM of 72 / 100</strong>.
               </p>
             </div>
           </motion.article>

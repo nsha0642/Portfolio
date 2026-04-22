@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import {
+  CircleStackIcon,
   CodeBracketIcon,
   CommandLineIcon,
   LightBulbIcon,
@@ -9,48 +10,73 @@ import "./Skills.css";
 import MascotAnimation from "../Mascot/MascotAnimation";
 import { hoverLift, useSectionReveal } from "../../utils/animations";
 
-const programmingSkills = [
-  "Python",
-  "JavaScript",
-  "SQL",
-  "React.js",
-  "Node.js",
-  "Express.js",
-  "Bootstrap",
-  "HTML",
-  "CSS",
-];
+const programmingSkills = ["JavaScript", "Python"];
 
-const engineeringSkills = [
+const frontendSkills = ["React.js", "HTML", "CSS", "Responsive Design"];
+
+const backendSkills = ["Node.js", "FastAPI", "RESTful APIs"];
+
+const coreSkills = [
   "Data Structures & Algorithms",
-  "Object-Oriented Programming",
-  "Time & Space Complexity",
-  "RESTful API Design",
-  "Component-Based Architecture",
-  "State Management",
-  "CI/CD",
-  "Performance Optimization",
+  "Object-Oriented Design",
   "System Design Fundamentals",
-  "Digital Experience",
-  "Customer Experience",
 ];
 
-const toolsAndConcepts = [
+const databaseSkills = ["SQL"];
+
+const toolsAndOther = [
   "Git",
   "JIRA",
   "Confluence",
   "Figma",
-  "Human-Computer Interaction",
   "Accessibility (WCAG)",
-  "Responsive Design",
-  "Cloud Basics",
+  "Agile Methodologies",
+  "LLMs",
 ];
 
 const interests = [
   "Human-Computer Interaction",
   "Cyber Security",
+  "Scalable Systems",
   "Product Development",
-  "Business Analysis",
+];
+
+const skillSections = [
+  {
+    title: "Programming",
+    icon: CodeBracketIcon,
+    items: programmingSkills,
+  },
+  {
+    title: "Frontend",
+    icon: LightBulbIcon,
+    items: frontendSkills,
+  },
+  {
+    title: "Backend",
+    icon: CommandLineIcon,
+    items: backendSkills,
+  },
+  {
+    title: "Core CS",
+    icon: CircleStackIcon,
+    items: coreSkills,
+  },
+  {
+    title: "Databases",
+    icon: CircleStackIcon,
+    items: databaseSkills,
+  },
+  {
+    title: "Tools & Other",
+    icon: CommandLineIcon,
+    items: toolsAndOther,
+  },
+  {
+    title: "Interests",
+    icon: LightBulbIcon,
+    items: interests,
+  },
 ];
 
 const Skills = () => {
@@ -67,51 +93,27 @@ const Skills = () => {
 
       <div className="container skills-container">
         <h2 className="section-title text-2xl font-semibold text-pink-400">
-          Skills
+          Skills &amp; Interests
         </h2>
 
         <div className="skills-grid">
-          <motion.article className="skills-card" {...hoverLift}>
-            <h3 className="skills-subtitle">
-              <CodeBracketIcon width={20} height={20} aria-hidden="true" /> Programming &amp;
-              Frameworks
-            </h3>
-            <div className="skills-chip-group">
-              {programmingSkills.map((skill) => (
-                <span key={skill} className="skill-chip">
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </motion.article>
-
-          <motion.article className="skills-card" {...hoverLift}>
-            <h3 className="skills-subtitle">
-              <CommandLineIcon width={20} height={20} aria-hidden="true" /> Computer Science &amp;
-              Software Engineering
-            </h3>
-            <div className="skills-chip-group">
-              {engineeringSkills.map((skill) => (
-                <span key={skill} className="skill-chip">
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </motion.article>
-
-          <motion.article className="skills-card" {...hoverLift}>
-            <h3 className="skills-subtitle">
-              <LightBulbIcon width={20} height={20} aria-hidden="true" /> Tools, Concepts &amp;
-              Interests
-            </h3>
-            <div className="skills-chip-group">
-              {[...toolsAndConcepts, ...interests].map((item) => (
-                <span key={item} className="skill-chip">
-                  {item}
-                </span>
-              ))}
-            </div>
-          </motion.article>
+          {skillSections.map((section) => {
+            const Icon = section.icon;
+            return (
+              <motion.article key={section.title} className="skills-card" {...hoverLift}>
+                <h3 className="skills-subtitle">
+                  <Icon width={20} height={20} aria-hidden="true" /> {section.title}
+                </h3>
+                <div className="skills-chip-group">
+                  {section.items.map((item) => (
+                    <span key={item} className="skill-chip">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </motion.article>
+            );
+          })}
         </div>
       </div>
       <MascotAnimation position="bottom-left" size={92} />
