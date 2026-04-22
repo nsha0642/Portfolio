@@ -7,7 +7,6 @@ import {
   GlobeAltIcon,
 } from "@heroicons/react/24/outline";
 import "./Home.css";
-import MascotAnimation from "../Mascot/MascotAnimation";
 import { BubbleBackground } from "../AnimateUI/BubbleBackground";
 import profilePic from "../../assets/profilePic.png";
 import { buttonMotion, useSectionReveal } from "../../utils/animations";
@@ -98,14 +97,14 @@ const Home = () => {
         ))}
       </div>
 
-      <div className="content container">
-        <div className="image-area home-animate">
+      <div className="home-hero home-animate">
+        <div className="home-hero-media">
           <div className="photo-panel">
             <img src={profilePic} alt="Nishanth Shanmugasundaram" className="profile-photo" />
           </div>
         </div>
 
-        <div className="text-area home-animate">
+        <div className="home-hero-copy">
           <h1 className="intro-title">
             Hi, I'm <span className="highlight">Nishanth Shanmugasundaram</span>
           </h1>
@@ -138,8 +137,6 @@ const Home = () => {
             </motion.button>
           </div>
         </div>
-
-        <MascotAnimation position="bottom-right" size={110} />
       </div>
 
       {showProjects && (

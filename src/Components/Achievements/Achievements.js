@@ -2,7 +2,6 @@ import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import { SparklesIcon } from "@heroicons/react/24/outline";
 import "./Achievements.css";
-import MascotAnimation from "../Mascot/MascotAnimation";
 import {
   hoverLift,
   listItemVariants,
@@ -72,7 +71,6 @@ const Achievements = () => {
           </motion.article>
         </div>
       </div>
-      <MascotAnimation position="bottom-right" size={96} />
     </section>
   );
 };

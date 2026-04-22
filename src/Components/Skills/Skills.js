@@ -7,7 +7,6 @@ import {
   LightBulbIcon,
 } from "@heroicons/react/24/outline";
 import "./Skills.css";
-import MascotAnimation from "../Mascot/MascotAnimation";
 import { hoverLift, useSectionReveal } from "../../utils/animations";
 
 const programmingSkills = ["JavaScript", "Python"];
@@ -116,7 +115,6 @@ const Skills = () => {
           })}
         </div>
       </div>
-      <MascotAnimation position="bottom-left" size={92} />
     </section>
   );
 };

@@ -2,7 +2,6 @@ import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import { AcademicCapIcon } from "@heroicons/react/24/outline";
 import "./Education.css";
-import MascotAnimation from "../Mascot/MascotAnimation";
 import DonBosco from "../../assets/DonBosco.jpg";
 import Srm from "../../assets/Srm.jpeg";
 import Sydney from "../../assets/Sydney.png";
@@ -71,7 +70,6 @@ const Education = () => {
           </motion.article>
         </div>
       </div>
-      <MascotAnimation position="bottom-left" size={96} />
     </section>
   );
 };

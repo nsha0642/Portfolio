@@ -2,7 +2,6 @@ import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import { BriefcaseIcon } from "@heroicons/react/24/outline";
 import "./Experience.css";
-import MascotAnimation from "../Mascot/MascotAnimation";
 import EYLogo from "../../assets/EY.png";
 import COWRKSLogo from "../../assets/COWRKS.png";
 import {
@@ -117,7 +116,6 @@ const Experience = () => {
           </motion.article>
         </div>
       </div>
-      <MascotAnimation position="bottom-right" size={100} />
     </section>
   );
 };

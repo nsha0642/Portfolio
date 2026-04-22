@@ -2,7 +2,6 @@ import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import { BuildingOffice2Icon } from "@heroicons/react/24/outline";
 import "./Internships.css";
-import MascotAnimation from "../Mascot/MascotAnimation";
 import MGLogo from "../../assets/MG Motors.png";
 import GELogo from "../../assets/General Electric.png";
 import BCGLogo from "../../assets/BCG.png";
@@ -107,7 +106,6 @@ const Internships = () => {
           </motion.article>
         </div>
       </div>
-      <MascotAnimation position="bottom-left" size={96} />
     </section>
   );
 };
