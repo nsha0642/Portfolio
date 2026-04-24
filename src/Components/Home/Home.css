@@ -190,6 +190,21 @@ body {
   margin-bottom: 15px;
 }
 
+.project-points {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: #d7d7d7;
+}
+
+.project-points li {
+  margin-bottom: 14px;
+  line-height: 1.8;
+}
+
+.project-points li:last-child {
+  margin-bottom: 0;
+}
+
 .contact-list {
   list-style: none;
   padding: 0;

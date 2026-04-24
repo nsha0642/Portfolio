@@ -15,18 +15,12 @@ const projects = [
   {
     title: "ElderCare Assist System",
     tech: "React.js, FastAPI, OpenAI SDK",
-    description: [
-      "Led the design and development of a full-stack healthcare platform supporting patients, caregivers, and doctors with features such as health tracking and geofencing alerts.",
-      "Architected and built backend services using FastAPI to manage health data, alerts, and user workflows while integrating an AI-powered assistant for routines, reminders, and conversational support.",
-      "Applied layered and service-oriented architecture patterns and managed Agile delivery through user stories, sprint planning, testing, and coordinated release execution.",
-    ],
-  },
-  {
-    title: "Developer Portfolio Website",
-    tech: "React.js, Framer Motion, Bootstrap, Responsive UI",
-    description: [
-      "Built a personal developer portfolio to showcase engineering projects, UI and UX work, and software systems in a clean interactive format.",
-      "Designed the site to highlight technical projects, system thinking, and polished front-end presentation while staying easy to maintain and publish on GitHub Pages.",
+    bullets: [
+      "Built a healthcare platform for patients, caregivers, and doctors with health tracking and geo-fencing alerts.",
+      "Developed FastAPI backend services to manage health data, alerts, and user workflows.",
+      "Integrated an AI assistant for daily routines, reminders, and simple conversational support.",
+      "Used a modular architecture to keep the system scalable and easier to maintain.",
+      "Managed Agile delivery through user stories, sprint planning, testing, and release coordination.",
     ],
   },
 ];
@@ -156,11 +150,11 @@ const Home = () => {
                 <p className="project-tech">
                   <strong>Technologies:</strong> {project.tech}
                 </p>
-                <div className="project-description">
-                  {project.description.map((item) => (
-                    <p key={item}>{item}</p>
+                <ul className="project-points">
+                  {project.bullets.map((item) => (
+                    <li key={item}>{item}</li>
                   ))}
-                </div>
+                </ul>
               </article>
             ))}
           </div>
