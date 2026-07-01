@@ -1,0 +1,29 @@
+.scroll-portrait {
+  position: fixed;
+  z-index: 8;
+  right: clamp(18px, 4vw, 70px);
+  top: 32vh;
+  width: clamp(120px, 14vw, 205px);
+  pointer-events: none;
+  filter: drop-shadow(0 24px 45px rgba(0,0,0,.5));
+}
+.scroll-portrait img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 16%;
+  border-radius: 8px;
+  border: 1px solid rgba(167,206,255,.48);
+}
+.scroll-portrait-orbit {
+  position: absolute;
+  inset: -12px;
+  border: 1px solid rgba(167,206,255,.2);
+  border-radius: 14px;
+  animation: portrait-orbit 8s linear infinite;
+}
+.scroll-portrait-orbit::after { content: ""; position: absolute; width: 8px; height: 8px; border-radius: 50%; background: #a7ceff; top: 16%; right: 5%; box-shadow: 0 0 18px #a7ceff; }
+.scroll-portrait span { display: block; color: #91bfff; font-size: .52rem; letter-spacing: .16em; margin-top: 10px; text-align: center; }
+@keyframes portrait-orbit { to { transform: rotate(360deg); } }
+@media (max-width: 900px) { .scroll-portrait { display: none; } }
+@media (prefers-reduced-motion: reduce) { .scroll-portrait { display: none; } }

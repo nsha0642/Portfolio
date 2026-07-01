@@ -36,7 +36,7 @@ const Education = () => {
               <p className="edu-desc">
                 Currently pursuing a specialization in{" "}
                 <strong>Human-Computer Interaction (HCI)</strong> with a current{" "}
-                <strong>WAM of 72 / 100</strong>.
+                <strong>WAM of 71 / 100</strong> and expected completion in December 2026.
               </p>
             </div>
           </motion.article>

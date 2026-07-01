@@ -83,7 +83,7 @@ const Skills = () => {
   useSectionReveal(sectionRef, { targets: ".skills-card, .section-title" });
 
   return (
-    <section className="skills-section" ref={sectionRef}>
+    <section id="skills" className="skills-section" ref={sectionRef}>
       <div className="floating-background">
         <div className="circle small"></div>
         <div className="circle medium"></div>

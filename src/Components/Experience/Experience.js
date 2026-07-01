@@ -2,118 +2,95 @@ import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import { BriefcaseIcon } from "@heroicons/react/24/outline";
 import "./Experience.css";
-import EYLogo from "../../assets/EY.png";
-import COWRKSLogo from "../../assets/COWRKS.png";
-import {
-  hoverLift,
-  listItemVariants,
-  useSectionReveal,
-} from "../../utils/animations";
+import MGLogo from "../../assets/MG Motors.png";
+import GELogo from "../../assets/General Electric.png";
+import BCGLogo from "../../assets/BCG.png";
+import UberLogo from "../../assets/Uber.png";
+import InfosysLogo from "../../assets/Infosys.jpg";
+import { useSectionReveal } from "../../utils/animations";
+
+const experiences = [
+  {
+    company: "Infosys Private Limited",
+    role: "Systems Engineer",
+    period: "NOV 2021 — SEP 2024",
+    logo: InfosysLogo,
+    label: "Professional",
+    points: [
+      "Contributed to the development and enhancement of web-based business applications, building features that supported user workflows such as meeting room booking, booking management, and internal business operations.",
+      "Contributed across different stages of the software lifecycle, including requirement analysis, development, testing, issue resolution, deployment support, and continuous improvements to enhance system reliability and user experience.",
+      "Collaborated with developers, designers, testers, business stakeholders, and clients to gather requirements, refine features, resolve implementation issues, and support successful delivery of business applications.",
+      "Investigated, debugged, and resolved application issues in production environments, improving system stability and supporting uninterrupted business operations.",
+      "Contributed to code reviews, software testing, and implementation improvements to maintain code quality, enhance maintainability, and support reliable software delivery.",
+      "Adapted to evolving project requirements, changing business needs, and new responsibilities, ensuring consistent delivery and effective contribution across multiple project phases.",
+      "Demonstrated completed application modules to stakeholders, incorporated feedback, and supported successful feature acceptance prior to delivery.",
+    ],
+  },
+  {
+    company: "Uber Eats",
+    role: "Delivery Partner · Part-time, Australia",
+    period: "CURRENT",
+    logo: UberLogo,
+    label: "Customer operations",
+    points: [
+      "Completed 300+ deliveries with 96% customer satisfaction, 90% acceptance, 88% on-time performance, and only 1% cancellation.",
+      "Applied communication, time management, adaptability, and real-time problem solving in a fast-paced service environment.",
+    ],
+  },
+  {
+    company: "MG Nurture",
+    role: "Customer Research Internship",
+    period: "MAY — JUL 2019",
+    logo: MGLogo,
+    label: "Internship",
+    points: ["Conducted customer research for upcoming SUV launches and translated survey findings into structured product and marketing insights."],
+  },
+  {
+    company: "General Electric",
+    role: "Process Analysis Internship",
+    period: "DEC 2019 — FEB 2020",
+    logo: GELogo,
+    label: "Internship",
+    points: ["Modelled enterprise workflows using BPMN and Fishbone analysis, identifying automation opportunities in quality-control processes."],
+  },
+  {
+    company: "BCG",
+    role: "Experience Design Module",
+    period: "APR — JUN 2020",
+    logo: BCGLogo,
+    label: "Internship",
+    points: ["Created personas, user journeys, and wireframes using design thinking and HCI methods for digital-transformation scenarios."],
+  },
+];
 
 const Experience = () => {
   const sectionRef = useRef(null);
-  useSectionReveal(sectionRef, {
-    targets: ".experience-card, .experience-summary",
-  });
+  useSectionReveal(sectionRef, { targets: ".experience-summary" });
 
   return (
     <section id="experience" className="experience-section" ref={sectionRef}>
-      <div className="floating-background">
-        <div className="circle small"></div>
-        <div className="circle medium"></div>
-        <div className="circle large"></div>
-      </div>
-
       <div className="container experience-container">
-        <h2 className="section-title">Experience</h2>
-
-        <p className="experience-summary">
-          <span className="experience-summary-main">
-            Systems Engineer with experience building scalable full-stack applications, RESTful
-            APIs, and user-centric systems across frontend and backend architectures
-          </span>
-          <br />
-          <span className="experience-summary-sub">
-            Infosys Private Limited, Chennai (2 years and 8 months)
-          </span>
-        </p>
-
+        <p className="section-kicker">THE JOURNEY SO FAR</p>
+        <h2 className="section-title">Experience, all in one timeline</h2>
+        <p className="experience-summary">2.8 years of engineering experience, complemented by customer-facing work and cross-disciplinary internships.</p>
         <div className="experience-grid">
-          <motion.article className="experience-card" {...hoverLift}>
-            <header className="experience-card-header">
-              <div className="experience-logo-wrapper">
-                <img src={EYLogo} alt="EY logo" className="experience-logo" />
+          {experiences.map((item) => (
+            <motion.article className="experience-card" key={`${item.company}-${item.period}`} initial={{ opacity: 0, y: 32 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .2 }} transition={{ duration: .55, ease: "easeOut" }}>
+              <span className="timeline-dot" />
+              <div className="experience-card-header">
+                <div className="experience-logo-wrapper">
+                  {item.logo ? <img src={item.logo} alt="" className="experience-logo" /> : <BriefcaseIcon width={30} />}
+                </div>
+                <div className="experience-heading">
+                  <span className="experience-label">{item.label}</span>
+                  <h3>{item.company}</h3>
+                  <p>{item.role}</p>
+                </div>
+                <time>{item.period}</time>
               </div>
-              <div className="experience-heading">
-                <h3>
-                  <BriefcaseIcon width={22} height={22} aria-hidden="true" /> EY - Enterprise
-                  Support Platform Modernisation
-                </h3>
-              </div>
-            </header>
-
-            <ul className="experience-list">
-              {[
-                "Refactored a large-scale ticket management platform by migrating legacy modules into a modular React-based architecture integrated with RESTful backend services.",
-                "Designed reusable component architectures and state-driven workflows, improving maintainability and enabling scalable feature development.",
-                "Re-architected ticket lifecycle workflows using user-centered design principles to improve usability and reduce navigation complexity.",
-                "Developed dynamic dashboard modules with API-driven data rendering for near real-time system monitoring.",
-                "Optimised application performance using lazy loading, memoisation, and efficient state updates to improve responsiveness.",
-                "Collaborated with backend teams to define API contracts and ensure reliable integration across distributed systems.",
-                "Participated in code reviews and design discussions, ensuring code quality, scalability, and testability.",
-              ].map((item) => (
-                <motion.li
-                  key={item}
-                  variants={listItemVariants}
-                  initial="initial"
-                  whileInView="animate"
-                  viewport={{ once: true, amount: 0.4 }}
-                >
-                  {item}
-                </motion.li>
-              ))}
-            </ul>
-          </motion.article>
-
-          <motion.article className="experience-card" {...hoverLift}>
-            <header className="experience-card-header">
-              <div className="experience-logo-wrapper">
-                <img
-                  src={COWRKSLogo}
-                  alt="COWRKS logo"
-                  className="experience-logo experience-logo-cowrks"
-                />
-              </div>
-              <div className="experience-heading">
-                <h3>
-                  <BriefcaseIcon width={22} height={22} aria-hidden="true" /> CoWrks - Partner
-                  Ecosystem Platform
-                </h3>
-              </div>
-            </header>
-
-            <ul className="experience-list">
-              {[
-                "Architected and developed a full-stack partner portal with a React frontend and RESTful backend integration supporting real-time content updates.",
-                "Implemented role-based dashboards with conditional rendering and structured validation to improve usability.",
-                "Designed session management and authentication flows to ensure secure and consistent user experiences.",
-                "Applied accessibility best practices (WCAG) and responsive design across multiple devices.",
-                "Diagnosed and resolved production issues using debugging and browser profiling tools.",
-                "Wrote unit tests and performed regression testing to maintain system reliability.",
-                "Supported UAT cycles and collaborated with stakeholders to ensure successful production deployment.",
-              ].map((item) => (
-                <motion.li
-                  key={item}
-                  variants={listItemVariants}
-                  initial="initial"
-                  whileInView="animate"
-                  viewport={{ once: true, amount: 0.3 }}
-                >
-                  {item}
-                </motion.li>
-              ))}
-            </ul>
-          </motion.article>
+              <ul className="experience-list">{item.points.map((point) => <li key={point}>{point}</li>)}</ul>
+            </motion.article>
+          ))}
         </div>
       </div>
     </section>
