@@ -13,7 +13,7 @@ const Achievements = () => {
   useSectionReveal(sectionRef, { targets: ".achievement-card, .section-title" });
 
   return (
-    <section className="achievements-section" ref={sectionRef}>
+    <section id="achievements" className="achievements-section" ref={sectionRef}>
       <div className="floating-background">
         <div className="circle small"></div>
         <div className="circle medium"></div>
@@ -54,6 +54,7 @@ const Achievements = () => {
             </h3>
             <ul className="achievement-list">
               {[
+                "Infosys Certified Front End Web Developer",
                 "Infosys Certified React Professional",
                 "Infosys Certified Manual Tester",
               ].map((item) => (
